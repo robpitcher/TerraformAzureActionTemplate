@@ -3,13 +3,13 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.37.0"
+      version = "3.75.0"
     }
   }
   backend "azurerm" {
-    resource_group_name  = "state-and-backend"
-    storage_account_name = "jkrilovtfstate"
-    container_name       = "state"
+    resource_group_name  = "rg-terraformstate-mgmt"
+    storage_account_name = "rptfstate"
+    container_name       = "states"
     key                  = "template.tfstate"
   }
 }
