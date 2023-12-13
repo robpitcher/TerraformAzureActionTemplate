@@ -4,16 +4,14 @@ This repository will have some basic folder structure and a GitHub action for de
 
 ## Azure Integration
 
-In order for Terraform to be able to connect to Azure you'll need to [create a service principal](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) along with a secret. Once you create the service principal add a secret named `AZURE_CREDENTIALS` to your GitHub Repository under **Repository Settings > Secrets and variables > Actions**. The value for the secret should contain the details of your service principal in JSON format as shown:
+In order for Terraform to be able to connect to Azure you'll need to [create a service principal](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) along with a secret. Once you create the service principal add the following secrets to your GitHub Repository under **Repository Settings > Secrets and variables > Actions**:
 
-```json
-{
-    "clientId": "<GUID>",
-    "clientSecret": "<GUID>",
-    "subscriptionId": "<GUID>",
-    "tenantId": "<GUID>"
-}
-```
+
+* AZURE_CLIENT_ID
+* AZURE_CLIENT_SECRET
+* AZURE_SUBSCRIPTION_ID
+* AZURE_TENANT_ID
+
 
 ## GitHub Actions
 
