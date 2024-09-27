@@ -3,7 +3,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "3.75.0"
+      version = "4.3.0"
     }
   }
   backend "azurerm" {
@@ -11,6 +11,7 @@ terraform {
     storage_account_name = "rptfstate"
     container_name       = "states"
     key                  = "template.tfstate"
+    use_oidc             = true
   }
 }
 
