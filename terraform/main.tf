@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "baseRG" {
+resource "azurerm_resource_group" "example" {
   name     = var.projectName
   location = "East US"
 }
