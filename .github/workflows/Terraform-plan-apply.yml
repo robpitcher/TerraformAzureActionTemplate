@@ -15,9 +15,6 @@ on:
       - "terraform/**"
       - ".github/workflows/Terraform-plan-apply.yml"
 
-# on:
-#   workflow_dispatch:  # Manually triggered workflow
-
 # These environment variables are used by the terraform azure provider
 env:
   ARM_CLIENT_ID: "${{ secrets.AZURE_CLIENT_ID }}"
@@ -44,10 +41,8 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           working_directory: ${{env.workingDir}}
-          # tflint_rulesets: "azurerm"
           tflint_init: true
           filter_mode: "nofilter"
-          # reporter: github-pr-review
 
   terraform-plan:
     name: "Terraform Plan"
