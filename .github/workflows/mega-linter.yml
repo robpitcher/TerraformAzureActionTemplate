@@ -1,7 +1,7 @@
 ---
 #################################
 #################################
-## Super Linter GitHub Actions ##
+## Mega Linter GitHub Actions ##
 #################################
 #################################
 name: Mega-Linter
@@ -51,7 +51,8 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: Mega-Linter
-        uses: oxsecurity/megalinter@v7
+        uses: oxsecurity/megalinter/flavors/terraform@v8.0.0
+        # uses: oxsecurity/megalinter@v8.0.0
         env:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: main
