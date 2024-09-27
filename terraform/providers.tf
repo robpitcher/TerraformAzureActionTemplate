@@ -7,10 +7,10 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name  = "rg-terraformstate-mgmt"
-    storage_account_name = "rptfstate"
-    container_name       = "states"
-    key                  = "template.tfstate"
+    resource_group_name  = "<State Management Resource Group Name>"
+    storage_account_name = "<State Management Storage Account Name>"
+    container_name       = "<State Management Container Name>"
+    key                  = "<State Management Key Name>"
     use_oidc             = true
   }
 }
