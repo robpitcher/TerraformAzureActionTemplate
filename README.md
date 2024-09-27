@@ -4,14 +4,11 @@ This repository will have some basic folder structure and a GitHub action for de
 
 ## Azure Integration
 
-In order for Terraform to be able to connect to Azure you'll need to [create a service principal](https://learn.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) along with a secret. Once you create the service principal add the following secrets to your GitHub Repository under **Repository Settings > Secrets and variables > Actions**:
-
+Follow this [guide](https://learn.microsoft.com/en-us/azure/developer/github/connect-from-azure-openid-connect) to create an Entra application or managed identity for Github to use to authenticate with Azure. Once you create the identity, add the following secrets to your GitHub Repository under **Repository Settings > Secrets and variables > Actions**:
 
 * AZURE_CLIENT_ID
-* AZURE_CLIENT_SECRET
 * AZURE_SUBSCRIPTION_ID
 * AZURE_TENANT_ID
-
 
 ## GitHub Actions
 
@@ -37,9 +34,9 @@ This is the core worklfow which actually applies the IaC (Infrastructure as Code
 1) **PR Comment Script** - This step runs a custom bash script based on a script [provided by Hashicorp](https://developer.hashicorp.com/terraform/tutorials/automation/github-actions).  The script takes the output from the previous steps including the full Terraform Plan output and submits them as a comment on the PR for easy review.
 1) **Terraform Apply** - Once the PR has been merged into the main branch (or upon any commit directly to the main branch) the final action is to run Terraform Apply. This step will only run if the Terraform Apply step was successful.
 
-### super-linter.yml
+### mega-linter.yml
 
-This is a Linter created by GitHub which is capable of checking code in multiple languages.  This is helpful for generic templates that may be used with any language. More information and configuration options can be found [here](https://github.com/marketplace/actions/super-linter).
+Megalinter is a collection of popular linters which is capable of checking code in multiple languages.  This is helpful for generic templates that may be used with any language. More information and configuration options can be found [here](https://megalinter.io).
 
 ## Terraform Docs
 
